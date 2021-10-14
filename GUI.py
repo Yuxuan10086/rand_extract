@@ -10,7 +10,7 @@ class Window():
         # self.extracted_name = extract.extract(extract.read('name.csv'), int(num))
         self.main.geometry('350x200+' + str(int(0.5 * self.main.winfo_screenwidth())) +
                       '+' + str(int(0.5 * self.main.winfo_screenheight())))
-        self.main.title('随机抽取器v2.3 by坤坤')
+        self.main.title('随机抽取器v2.4 by坤坤')
         start = tk.Button(self.main, text='开始使用', command=lambda : self.input_num(), font=('Arial', 13))
         start.place(x=60, y=100, anchor='w')
         about = tk.Button(self.main, text='关于作者', command=self.about, font=('Arial', 13))

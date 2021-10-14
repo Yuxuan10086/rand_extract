@@ -8,7 +8,7 @@ class Extract:
         self.names = []
         self.chance = []
         self.totalChance = 0
-        self.ifAgain = 0 # 决定是否允许重复抽取
+        self.ifAgain = 1 # 决定是否允许重复抽取
         with open(file_url) as csv_file:
             names_csv = csv.reader(csv_file, delimiter = ',')
             for data in names_csv:
@@ -18,6 +18,7 @@ class Extract:
             csv_file.close()
         for c in self.chance:
             self.totalChance += c
+            
     def giveOne(self):
         if self.totalChance == 0:
             raise ValueError('所有同学已被抽取，请重启软件')
@@ -36,6 +37,6 @@ class Extract:
             res = self.names[res]
         return res
 
-test = Extract()
-while 1:
-    print(test.giveOne())
+# test = Extract()
+# while 1:
+#     print(test.giveOne())

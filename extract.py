@@ -4,7 +4,7 @@ import os
 import random
 class Extract:
     def __init__(self):
-        file_url = os.path.split(os.path.realpath(__file__))[0] + '/name.csv'
+        file_url = os.path.split(os.path.realpath(__file__))[0] + '\\name.csv'
         self.names = []
         self.chance = []
         self.totalChance = 0

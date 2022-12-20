@@ -3,13 +3,13 @@ import csv
 import os
 import random
 class Extract:
+    ifAgain = 0 # 决定是否允许重复抽取
     def __init__(self):
         file_url = os.path.split(os.path.realpath(__file__))[0] + '\\name.csv'
         self.names = []
         self.chance = []
         self.totalChance = 0
-        self.ifAgain = 1 # 决定是否允许重复抽取
-        with open(file_url) as csv_file:
+        with open(file_url, encoding='utf-8') as csv_file:
             names_csv = csv.reader(csv_file, delimiter = ',')
             for data in names_csv:
                 if int(data[1]):
@@ -21,7 +21,7 @@ class Extract:
             
     def giveOne(self):
         if self.totalChance == 0:
-            raise ValueError('所有同学已被抽取，请重启软件')
+            return '所有同学已被抽取'
         num = 0
         rand = random.randint(1, self.totalChance)
         for i in range(len(self.chance)):
